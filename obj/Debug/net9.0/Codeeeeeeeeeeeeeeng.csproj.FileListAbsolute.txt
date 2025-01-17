@@ -12,3 +12,4 @@ C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\refint\Codeeeeeeeeeeeeee
 C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.pdb
 C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.genruntimeconfig.cache
 C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\ref\Codeeeeeeeeeeeeeeng.dll
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.sourcelink.json

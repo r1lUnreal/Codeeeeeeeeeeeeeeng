@@ -38,6 +38,11 @@ class Person
         }
 
     }
+
+    public void txt ()
+    {
+        File.WriteAllText(Name+".txt",  Name + " " + Age);
+    }
 }
 
 class Program
@@ -51,6 +56,9 @@ class Program
         Person chel2 = new Person("Саныч", 44, 11);
         chel2.helo();
         chel2.last(11);
+
+        Person perone = new Person("Тиханыч", 20, 11);
+        perone.txt();
     }  
 }
 

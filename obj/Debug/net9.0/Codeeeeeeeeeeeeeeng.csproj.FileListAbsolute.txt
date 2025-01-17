@@ -1,0 +1,14 @@
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\bin\Debug\net9.0\Codeeeeeeeeeeeeeeng.exe
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\bin\Debug\net9.0\Codeeeeeeeeeeeeeeng.deps.json
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\bin\Debug\net9.0\Codeeeeeeeeeeeeeeng.runtimeconfig.json
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\bin\Debug\net9.0\Codeeeeeeeeeeeeeeng.dll
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\bin\Debug\net9.0\Codeeeeeeeeeeeeeeng.pdb
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.AssemblyInfoInputs.cache
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.AssemblyInfo.cs
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.csproj.CoreCompileInputs.cache
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.dll
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\refint\Codeeeeeeeeeeeeeeng.dll
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.pdb
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\Codeeeeeeeeeeeeeeng.genruntimeconfig.cache
+C:\Users\rilUnreal\Codeeeeeeeeeeeeeeng\obj\Debug\net9.0\ref\Codeeeeeeeeeeeeeeng.dll

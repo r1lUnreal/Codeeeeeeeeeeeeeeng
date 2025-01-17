@@ -19,6 +19,7 @@ class Person
     public void helo()
     {
         Console.WriteLine($"Салам! Я мутный тип {Name}. Мне {Age}.");
+        Console.WriteLine("Buy tototototottotot");
     }
     public void last(int maxclass)
     {

@@ -24,6 +24,7 @@ class Person
     public void last(int maxclass)
     {
         int ifyear = maxclass - classNumber;
+        
 
         //Проверка сколоко осталось учится
         if (ifyear == 0)
@@ -39,9 +40,9 @@ class Person
 
     }
 
-    public void txt ()
+    public void txt (int ifyear)
     {
-        File.WriteAllText(Name+".txt",  Name + " " + Age);
+        File.WriteAllText(Name+".txt", "Я лысик " + Name + "." + " мне " + Age + ". " + "Я учился до " + ifyear);
     }
 }
 
@@ -58,7 +59,7 @@ class Program
         chel2.last(11);
 
         Person perone = new Person("Тиханыч", 20, 11);
-        perone.txt();
+        perone.txt(11);
     }  
 }
 

@@ -16,7 +16,7 @@ abstract class Vehicle
 
     public void DisplayInfo()
     {
-        Console.WriteLine($"Тип транспорта: {Name}, Скорость траспорта: {Speed} км/ч");
+        Console.WriteLine($"Название: {Name}, Скорость: {Speed} км/ч");
     }
 }
 
@@ -26,7 +26,7 @@ class Car : Vehicle
 
     public override void Move()
     {
-        Console.WriteLine($"{Name} летит по трасе М1.");
+        Console.WriteLine($"{Name} едет по дороге.");
     }
 }
 
@@ -36,7 +36,7 @@ class Bicycle : Vehicle
 
     public override void Move()
     {
-        Console.WriteLine($"{Name} едет по воде.");
+        Console.WriteLine($"{Name} едет по тротуару.");
     }
 }
 
@@ -46,7 +46,7 @@ class Boat : Vehicle
 
     public override void Move()
     {
-        Console.WriteLine($"{Name} плывёт по тратуару.");
+        Console.WriteLine($"{Name} плывёт по воде.");
     }
 }
 
@@ -54,16 +54,16 @@ class Program
 {
     static void Main()
     {
-        Car car1 = new Car("BMW M4 G80/G82 RESTAILING", 240.0);
-        Bicycle bicycle1 = new Bicycle("Крутой велик", 25.0);
-        Boat boat1 = new Boat("Лодка с мотором", 55.0);
+        Vehicle car = new Car("Легковой автомобиль", 120.0);
+        Vehicle bicycle = new Bicycle("Горный велосипед", 25.0);
+        Vehicle boat = new Boat("Катер", 55.0);
 
-            car1.DisplayInfo();
-            bicycle1.DisplayInfo();
-            boat1.DisplayInfo();
-            bicycle1.Move();
-            car1.Move();
-            boat1.Move();
+        List<Vehicle> vehicles = new List<Vehicle> { car, bicycle, boat };
+        foreach (Vehicle vehicle in vehicles)
+        {
+            vehicle.DisplayInfo();
+            vehicle.Move();
             Console.WriteLine();
+        }
     }
 }

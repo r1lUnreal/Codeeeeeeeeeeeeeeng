@@ -1,26 +1,25 @@
-﻿using System.IO.Pipelines;
-using System.Reflection.Metadata;
-using System.Reflection.PortableExecutable;
-using System.Security.AccessControl;
-
-
+﻿using System;
+using System.Collections.Generic;
 
 public class Creature
 {
     public string Name;
     public int Health;
+    
     public Creature(string name, int health)
     {
         Name = name;
         Health = health;
     }
+    
     public virtual void Attack(Creature target)
     {
         Console.WriteLine("ponel");
     }
-    public virtual void TakeDamage(int damages)
+    
+    public virtual void TakeDamage(int damage)
     {
-        Health = Health - damages;
+        Health -= damage;
         if (Health <= 0)
         {
             Console.WriteLine("you dead");
@@ -28,74 +27,78 @@ public class Creature
     }
 }
 
-    class Hero : Creature
+class Hero : Creature
+{
+    public int AttackPower;
+    
+    public Hero(string name, int health, int attackPower) : base(name, health)
     {
-        public int AttackPower;
-
-        public Hero(string name, int health, int attackpower):base(name, health)
-        {
-            AttackPower = attackpower;
-        }
-
-        public override void Attack(Creature target)
-        {
-            Console.WriteLine($"{Name} атакует {target.Name} наносит {AttackPower} урон!");
-            target.TakeDamage(AttackPower);
-        }
+        AttackPower = attackPower;
     }
-
-    class Monster : Creature
+    
+    public override void Attack(Creature target)
     {
-        public int AttackPower;
-        public Monster(string name, int health, int attackpower):base(name, health)
-        {
-            AttackPower = attackpower;
-        }
-        public override void Attack(Creature target)
-        {
-            Console.WriteLine($"{Name} атакует {target.Name} наносит {AttackPower} урон! ему бобо:(");
-            target.TakeDamage(AttackPower);
-        }
+        Console.WriteLine($"{Name} атакует {target.Name} и наносит {AttackPower} урона!");
+        target.TakeDamage(AttackPower);
     }
+}
 
-    class Item
+class Monster : Creature
+{
+    public int AttackPower;
+    
+    public Monster(string name, int health, int attackPower) : base(name, health)
     {
-        public string Name;
-        public string Description;
-
-        public Item(string name, string description)
-        {
-            Name = name;
-            Description = description;
-        }
-
-        public virtual void Use(string name, string description)
-        {
-            Console.WriteLine($"Using {Name}: {Description}");
-        }
+        AttackPower = attackPower;
     }
+    
+    public override void Attack(Creature target)
+    {
+        Console.WriteLine($"{Name} атакует {target.Name} и наносит {AttackPower} урона!");
+        target.TakeDamage(AttackPower);
+    }
+}
 
+class Item
+{
+    public string Name;
+    public string Description;
+    
+    public Item(string name, string description)
+    {
+        Name = name;
+        Description = description;
+    }
+    
+    public virtual void Use(Hero hero)
+    {
+        Console.WriteLine($"Используется {Name}: {Description}");
+    }
+}
 
+class HealingPotion : Item
+{
+    private int healingAmount;
+    
+    public HealingPotion(string name, string description, int healingAmount) : base(name, description)
+    {
+        this.healingAmount = healingAmount;
+    }
+    
+    public override void Use(Hero hero)
+    {
+        hero.Health += healingAmount;
+        Console.WriteLine($"{hero.Name} использует {Name} и восстанавливает {healingAmount} здоровья! Теперь у него {hero.Health} HP.");
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-// Класс "Игра" (Game)
 public class Game
 {
     private Hero hero;
     private List<Monster> monsters;
     private List<Item> inventory;
 
-    public Game(Hero hero, List Monsters, List Item)
+    public Game()
     {
         hero = new Hero("Zebra", 100, 20);
         monsters = new List<Monster>
@@ -105,18 +108,18 @@ public class Game
         };
         inventory = new List<Item>
         {
-            new HealingPotion("Small Healing Potion", "Heals 20 health points", 20)
+            new HealingPotion("Малое зелье лечения", "Восстанавливает 20 единиц здоровья", 20)
         };
     }
 
     public void Play()
     {
-        Console.WriteLine("Welcome to the my stuped RPG Game!");
-        Console.WriteLine($"{hero.Name} starts the journey with {hero.Health} health and {hero.AttackPower} attack power.");
+        Console.WriteLine("Добро пожаловать в мою глупую RPG!");
+        Console.WriteLine($"{hero.Name} начинает своё приключение с {hero.Health} здоровья и {hero.AttackPower} силы атаки.");
 
         foreach (var monster in monsters)
         {
-            Console.WriteLine($"\nA wild {monster.Name} appears!");
+            Console.WriteLine($"\nДикий {monster.Name} появился!");
 
             while (monster.Health > 0 && hero.Health > 0)
             {
@@ -129,27 +132,26 @@ public class Game
 
             if (hero.Health > 0)
             {
-                Console.WriteLine($"{hero.Name} defeated the {monster.Name}!");
+                Console.WriteLine($"{hero.Name} победил {monster.Name}!");
             }
             else
             {
-                Console.WriteLine($"{hero.Name} was defeated by the {monster.Name}...");
+                Console.WriteLine($"{hero.Name} был побеждён {monster.Name}...");
                 return;
             }
         }
 
-        Console.WriteLine($"\n{hero.Name} has defeated all the monsters!");
+        Console.WriteLine($"\n{hero.Name} победил всех монстров!");
 
         foreach (var item in inventory)
         {
             item.Use(hero);
         }
 
-        Console.WriteLine($"{hero.Name} has {hero.Health} health remaining after using items.");
+        Console.WriteLine($"{hero.Name} теперь имеет {hero.Health} здоровья после использования предметов.");
     }
 }
 
-// Основной класс для запуска игры
 public class Program
 {
     public static void Main()
@@ -158,6 +160,3 @@ public class Program
         game.Play();
     }
 }
-
-// why delete me C#!?!?!?
-// чем дальше тем больше я не понимаю :(

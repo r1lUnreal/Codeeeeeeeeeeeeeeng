@@ -1,52 +1,15 @@
 using System;
-using System.Collections.Generic;
 
-class Program
+namespace ConsoleApp
 {
-    static void Main()
+    public class Program
     {
-        // Задание 1
-        Dictionary<string, int> dataDict = new Dictionary<string, int>()
+        public static void Main(string[] args)
         {
-            { "a", 10 },
-            { "b", 20 },
-            { "фуфелшмерц", 42 }
-        };
+            string heh = "gg.txt";
+            string data = File.ReadAllText(heh);
 
-        Console.Write("Введите ключ: ");
-        string key = Console.ReadLine() ?? "";
-
-        try
-        {
-            Console.WriteLine($"Значение ключа '{key}': {dataDict[key]}");
+            Console.WriteLine(data);
         }
-        catch (KeyNotFoundException)
-        {
-            Console.WriteLine($"Ошибка: ключ '{key}' не найден!");
-        }
-
-        // Задание 2
-        try
-        {
-            Console.Write("Введите чсло: ");
-            int one = Convert.ToInt32(Console.ReadLine());
-            
-            Console.Write("Введите чсло: ");
-            int two = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine($"Ответ: {one / two}");
-        }
-        catch (DivideByZeroException)
-        {
-            Console.WriteLine("Ошибка: делить на ноль нельзя!");
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("Ошибка: это ты! Вводишь всё неправльно.");
-        }
-
-        // Задание 3
-        Console.WriteLine("Прога пашет. Нажми что-то чтобы она пошла в жопу...");
-        Console.ReadKey();
     }
 }

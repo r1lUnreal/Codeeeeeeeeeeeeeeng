@@ -37,6 +37,23 @@ namespace ConsoleApp
             //number.Sort();
             var orderby_number = number.OrderBy(n => n); //OrderByDescending - в обратном порядке
             Console.WriteLine(string.Join(" ", orderby_number));
+            Console.WriteLine("-----------------------------------------");
+
+            //GroupBy (группировка по определённому принципу)
+            var names = new List<string> {"Анна", "Андрея", "Борис", "Богдана", "Владимир"};
+            var grouped_names = names.GroupBy(n => n[0]);
+            foreach (var group in grouped_names)
+            {
+                Console.WriteLine(group.Key + ": " +  string.Join(" ", group));
+            }
+
+            Console.WriteLine("-----------------------------------------");
+            int [] nam = {1,2,3,4,5,6,7,8,9};
+            var grouped_nam = nam.GroupBy(n => n%2==0 ? "Пацаны" : "Чушпаны");
+            foreach (var group in grouped_nam)
+            {
+                Console.WriteLine(group.Key + ": " +  string.Join(" ", group));
+            }
         }
     }
 }

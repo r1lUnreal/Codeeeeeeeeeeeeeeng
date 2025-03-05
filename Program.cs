@@ -1,41 +1,34 @@
 using System;
 
-class Person
+namespace ConsoleApp
 {
-    public string Name { get; set; }
-    public int Age { get; set; }
-
-    public Person(string name, int age)
+    public class Program
     {
-        Name = name;
-        Age = age;
-    }
-}
-
-class Program
-{
-    static void Main()
-    {
-        List<Person> people = new List<Person>
+        public static void Main(string[] args)
         {
-            new Person("Фуфелшмерц", 000),
-            new Person("Чубака", 000),
-            new Person("Алёша", 24),
-            new Person("Ольга", 60),
-            new Person("Илья", 15)
-        };
+            //Агрегатные функции
+            int[] numbers = {1,2,3,4,5,6,7,8,9,8,7,6,5,4,3,2,1};
 
-        var groupePeople = people.GroupBy(p => p.Age);
+            //Console.WriteLine(numbers.Sum()); Суммирует
+            //Console.WriteLine(numbers.Average()); Среднее арифмитическое
+            //Console.WriteLine(numbers.Min()); Максимальное значение
+            //Console.WriteLine(numbers.Max()); Минимальное значение
+            //Console.WriteLine(numbers.Length);
+            //Console.WriteLine(numbers.Count()); Сколько всего чисел в массиве
+            //Console.WriteLine(numbers.Count(n => n>5)); Выводить колличество чисел которые больше 5
 
-        foreach (var group in groupePeople)
-        {
-            Console.WriteLine($"Возраст: {group.Key}");
-            foreach (var person in group)
-            {
-                Console.WriteLine($" - {person.Name}");
-            }
+
+            //Объединение, пересичение и исключение
+            List<int> list1 = new List<int> {1,2,3,4,5};
+            List<int> list2 = new List<int> {4,5,6,7,8};
+
+            //var union = list1.Union(list2); Объединение
+            //var intersection = list1.Intersect(list2); Пересичение
+            //var except = list1.Except(list2); Исключение
+
+            //Console.WriteLine(string.Join(", ", union));
+            //Console.WriteLine(string.Join(", ", intersection));
+            //Console.WriteLine(string.Join(", ", except));
         }
     }
 }
-
-// У тоби е эбупрофен? Голова болить...

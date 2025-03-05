@@ -6,12 +6,10 @@ namespace ConsoleApp
     {
         public static void Main(string[] args)
         {
-            List<int> numbers = new List<int> { 1, 3, 5, 7, 9, 2, 4, 6, 8 };
-            var sortnumbers = numbers.OrderByDescending(n => n); // сортировка
-            var otvet = sortnumbers.Where(n => n > numbers.Average());
-
-            Console.WriteLine(string.Join(" ", otvet));
-
+            List<string> words = new List<string> { "cat", "dog", "elephant", "tiger", "bear" };
+            var spisok = words.Where(n => n.Length>3).Select(n => n.ToUpper());
+            
+            Console.WriteLine(string.Join(" ", spisok));
         }
     }
 }

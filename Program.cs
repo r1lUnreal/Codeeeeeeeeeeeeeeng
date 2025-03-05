@@ -19,8 +19,8 @@ class Program
         List<Person> people = new List<Person>
         {
             new Person("Фуфелшмерц", 000),
-            new Person("Чубака", 37),
-            new Person("Алёша", 000),
+            new Person("Чубака", 000),
+            new Person("Алёша", 24),
             new Person("Ольга", 60),
             new Person("Илья", 15)
         };
@@ -37,3 +37,5 @@ class Program
         }
     }
 }
+
+// У тоби е эбупрофен? Голова болить...
